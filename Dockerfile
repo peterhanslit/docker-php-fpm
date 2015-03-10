@@ -33,7 +33,7 @@ COPY default.conf /etc/nginx/sites-available/default
 VOLUME /var/log/nginx
 EXPOSE 80
 
-ADD init.sh /
+ADD *.sh /
 RUN chmod +x /*.sh
 
 CMD /*.sh
