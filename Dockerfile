@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Federico Ramallo
+MAINTAINER Federico Ramallo <framallo@gmail.com>
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update 
@@ -30,7 +30,6 @@ RUN chown -R www-data:www-data /var/www/
 
 COPY default.conf /etc/nginx/sites-available/default
 
-VOLUME /var/www/
 VOLUME /var/log/nginx
 EXPOSE 80
 

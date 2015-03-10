@@ -52,3 +52,16 @@ You need to create a new image that inherits from this one.
 
 * add `FROM framallo/php-fpm` on your `Dockerfile`. 
 * build your image and install the php application in `/var/www`
+
+This is an example of a Dockerfile
+
+```
+FROM framallo/php-fpm
+
+# here you should run all the commands to bootstrap your php application
+RUN echo "<?php phpinfo(); ?>" > /var/www/index.php
+
+VOLUME /var/www/
+```
+
+The VOLUME directive should be placed after you bootstrapp the application
