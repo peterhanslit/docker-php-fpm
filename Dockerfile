@@ -33,5 +33,9 @@ COPY default.conf /etc/nginx/sites-available/default
 VOLUME /var/log/nginx
 EXPOSE 80
 
-CMD service php5-fpm start && nginx
+ADD init.sh /
+RUN chmod +x /*.sh
+
+CMD /*.sh
+
 # ENTRYPOINT /usr/sbin/php5-fpm --nodaemonize & nginx
