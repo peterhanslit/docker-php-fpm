@@ -36,6 +36,4 @@ EXPOSE 80
 ADD *.sh /
 RUN chmod +x /*.sh
 
-CMD exec /*.sh
-
-# ENTRYPOINT /usr/sbin/php5-fpm --nodaemonize & nginx
+CMD for f in /*.sh; do $f ; done
