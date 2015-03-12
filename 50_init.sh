@@ -1,4 +1,7 @@
 #!/bin/bash
 
-service php5-fpm start
+echo 'running php5-fpm'
+php5-fpm --nodaemonize --fpm-config /etc/php5/fpm/php-fpm.conf &
+
+echo 'running nginx'
 nginx
