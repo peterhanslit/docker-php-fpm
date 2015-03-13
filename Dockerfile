@@ -11,6 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
     
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+RUN sed -i -e '/http {/a client_max_body_size 100M;' /etc/nginx/nginx.conf 
 
 # php-fpm config
 RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g"                     /etc/php5/fpm/php.ini
