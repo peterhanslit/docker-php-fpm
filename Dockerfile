@@ -2,13 +2,13 @@ FROM ubuntu:14.04
 MAINTAINER Federico Ramallo <framallo@gmail.com>
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update 
-RUN apt-get install -y  libpng12-dev libjpeg-dev php5-fpm php5-gd php5-mysql php-apc
-RUN apt-get install -y  php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap
-RUN apt-get install -y  php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell
-RUN apt-get install -y  php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-curl
-RUN apt-get install -y  nginx
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y  libpng12-dev libjpeg-dev php5-fpm php5-gd php5-mysql php-apc && \
+    apt-get install -y  php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap && \
+    apt-get install -y  php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell && \
+    apt-get install -y  php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-curl && \
+    apt-get install -y  nginx && \
+    rm -rf /var/lib/apt/lists/*
     
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
